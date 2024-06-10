@@ -11,11 +11,13 @@
 					<circle cx="12" cy="19" r="1"></circle>
 				</svg>
 			</div>
-			<div class="dropdown-menu d-print-none" aria-labelledby="wikiOptionsButton">
-				<a class="dropdown-item edit-wiki-btn" href="#">Edit Page</a>
-				<a class="dropdown-item add-wiki-btn" href="#">New Page</a>
-				<a class="dropdown-item show-revisions" href="#" data-toggle="modal" data-target="#revisionsModal">Revisions</a>
-			</div>
+			{% if frappe.session.user == "Administrator" %}
+				<div class="dropdown-menu d-print-none" aria-labelledby="wikiOptionsButton">
+					<a class="dropdown-item edit-wiki-btn" href="#">Edit Page</a>
+					<a class="dropdown-item add-wiki-btn" href="#">New Page</a>
+					<a class="dropdown-item show-revisions" href="#" data-toggle="modal" data-target="#revisionsModal">Revisions</a>
+				</div>
+			{% endif %}
 		</div>
 	</div>
 	<div class="wiki-content">
